@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First HTML Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 30px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        h2 {
+            color: darkgreen;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        /* Task 1: CSS Transitions */
+
+        .transition-button {
+            background-color: lightblue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .transition-button:hover {
+            background-color: lightcoral;
+        }
+
+        /* Task 2: CSS Animations */
+
+        .animation-box {
+            width: 50px;
+            height: 50px;
+            background-color: lightgreen;
+            position: relative;
+            animation: move 2s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                left: 0;
+            }
+            to {
+                left: 100px;
+            }
+        }
+
+        /* Task 3: CSS Pseudo-classes */
+
+        .pseudo-list li:nth-child(odd) {
+            background-color: lightgray;
+        }
+
+        .pseudo-list li:nth-child(even) {
+            background-color: white;
+        }
+
+        /* Task 4: CSS Filters */
+
+        .filter-image {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .filter-image:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Task 5: CSS Pseudo-elements */
+
+        .quote {
+            position: relative;
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        .quote::before {
+            content: '“';
+            font-size: 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to My Page</h1>
+
+    <h2>About Me</h2>
+    <p>
+        My name is Queen. I am an
+        Information Technology student.
+    </p>
+
+    <h2>My Picture</h2>
+    <img src="queen.jpeg"
+         alt="A photograph of Queen"
+         width="250">
+
+    <h2>My Hobbies</h2>
+    <ul>
+        <li>Swimming</li>
+        <li>Travelling</li>
+        <li>Creating videos</li>
+        <li>Spending time with my family</li>
+    </ul>
+
+    <h2>My Favourite Website</h2>
+    <a href="https://www.laurea.fi">
+        Visit Laurea University
+    </a>
+
+    <h2>My Courses</h2>
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>What I Am Learning</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>Creating web pages</td>
+        </tr>
+        <tr>
+            <td>Programming</td>
+            <td>Writing code</td>
+        </tr>
+    </table>
+
+    <h2>Contact Me</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h1>Workshop 3: Advanced CSS</h1>
+
+    <h2>Task 1: CSS Transitions</h2>
+    <button class="transition-button">Hover me</button>
+
+    <h2>Task 2: CSS Animations</h2>
+    <div class="animation-box"></div>
+
+    <h2>Task 3: CSS Pseudo-classes</h2>
+    <ul class="pseudo-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <h2>Task 4: CSS Filters</h2>
+    <img src="queen.jpeg"
+         alt="Sample Image"
+         class="filter-image"
+         width="250">
+
+    <h2>Task 5: CSS Pseudo-elements</h2>
+    <blockquote class="quote">
+        This is a sample quote.
+    </blockquote>
+
+</body>
+</html>
