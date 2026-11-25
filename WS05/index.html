@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 5 - Responsive Design</title>
+
+    <style>
+
+        /* Basic CSS Styling */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        header {
+            background-color: darkblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: darkgreen;
+        }
+
+        footer {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        input {
+            max-width: 100%;
+            padding: 5px;
+        }
+
+        /* Task 1: Responsive Layout */
+
+        .responsive-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .column:first-child {
+            background-color: lightblue;
+        }
+
+        .column:last-child {
+            background-color: lightgreen;
+        }
+
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+            }
+        }
+
+        /* Task 2: Responsive Image */
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Task 3: Media Queries */
+
+        .media-query-box {
+            padding: 20px;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        @media (max-width: 600px) {
+            .media-query-box {
+                background-color: lightcoral;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .media-query-box {
+                background-color: lightblue;
+            }
+        }
+
+        /* Task 4: Responsive Navigation Bar */
+
+        .responsive-nav .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            gap: 20px;
+        }
+
+        .responsive-nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .responsive-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-toggle {
+            display: none;
+            background-color: lightblue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+
+            .responsive-nav .nav-list {
+                display: none;
+                flex-direction: column;
+            }
+
+            .responsive-nav .menu-toggle {
+                display: block;
+                margin: auto;
+            }
+
+            .responsive-nav .nav-list.active {
+                display: flex;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body id="home">
+
+    <header>
+
+        <h1>Welcome to My Website</h1>
+
+        <!-- Task 4: Responsive Navigation -->
+
+        <nav class="responsive-nav">
+
+            <button class="menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="navigation">
+                ☰ Menu
+            </button>
+
+            <ul class="nav-list" id="navigation">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                My name is Queen. I am an
+                Information Technology student.
+            </p>
+
+            <h2>My Picture</h2>
+
+            <img src="queen.jpeg"
+                 alt="A photograph of Queen"
+                 class="responsive-image"
+                 width="250">
+
+            <h2>My Hobbies</h2>
+
+            <ul>
+                <li>Swimming</li>
+                <li>Travelling</li>
+                <li>Creating videos</li>
+                <li>Spending time with my family</li>
+            </ul>
+
+            <h2>My Favourite Website</h2>
+
+            <a href="https://www.laurea.fi">
+                Visit Laurea University
+            </a>
+
+        </section>
+
+        <section>
+
+            <h2>My Courses</h2>
+
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>What I Am Learning</th>
+                </tr>
+
+                <tr>
+                    <td>HTML</td>
+                    <td>Creating web pages</td>
+                </tr>
+
+                <tr>
+                    <td>Programming</td>
+                    <td>Writing code</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <section id="contact">
+
+            <h2>Contact Me</h2>
+
+            <form>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <br><br>
+
+                <input type="submit" value="Submit">
+
+            </form>
+
+        </section>
+
+        <h1>Workshop 5: Responsive Design</h1>
+
+        <!-- Task 1 -->
+
+        <section>
+
+            <h2>Task 1: Responsive Layout</h2>
+
+            <div class="responsive-container">
+
+                <div class="column">
+                    Column 1
+                </div>
+
+                <div class="column">
+                    Column 2
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Task 2 -->
+
+        <section>
+
+            <h2>Task 2: Responsive Image</h2>
+
+            <img src="queen.jpeg"
+                 alt="Responsive Image"
+                 class="responsive-image"
+                 width="500">
+
+        </section>
+
+        <!-- Task 3 -->
+
+        <section>
+
+            <h2>Task 3: Media Queries</h2>
+
+            <div class="media-query-box">
+                Resize the window to see the effect
+            </div>
+
+        </section>
+
+        <!-- Task 4 -->
+
+        <section>
+
+            <h2>Task 4: Responsive Navigation Bar</h2>
+
+            <p>
+                The navigation bar at the top of the
+                website changes into a menu button
+                on smaller screens.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright 2026</p>
+    </footer>
+
+    <script>
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', function () {
+
+            const isOpen = navList.classList.toggle('active');
+
+            menuToggle.setAttribute('aria-expanded', isOpen);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
